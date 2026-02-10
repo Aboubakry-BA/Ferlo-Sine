@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Publications scientifiques du projet Ferlo-Sine sur la neutralité carbone et la restauration des terres au Sahel">
+    <title>Publications | Ferlo-Sine</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">
+                    <span class="logo-text">Ferlo-Sine</span>
+                    <span class="logo-subtitle">PC2</span>
+                </a>
+                <nav class="nav" id="mainNav">
+                    <ul class="nav-list">
+                        <li><a href="index.html" class="nav-link">Accueil</a></li>
+                        <li><a href="publications.html" class="nav-link active" aria-current="page">Publications</a></li>
+                        <li><a href="index.html#realisations" class="nav-link">Réalisations</a></li>
+                        <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+                    </ul>
+                </nav>
+                <button class="menu-toggle" id="menuToggle" aria-label="Ouvrir le menu" aria-expanded="false">
+                    <span class="hamburger"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="container">
+                <h1 class="page-title">Publications scientifiques</h1>
+                <p class="page-subtitle">
+                    Retrouvez l'ensemble des publications, communications et rapports issus du projet Ferlo-Sine
+                </p>
+            </div>
+        </section>
+
+        <!-- Publications Section -->
+        <section class="section">
+            <div class="container">
+                <!-- Filters -->
+                <div class="publications-filters">
+                    <div class="filter-group">
+                        <label for="searchInput" class="filter-label">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="11" cy="11" r="8"/>
+                                <path d="m21 21-4.35-4.35"/>
+                            </svg>
+                            Rechercher
+                        </label>
+                        <input
+                            type="text"
+                            id="searchInput"
+                            class="filter-input"
+                            placeholder="Titre, auteurs, mots-clés..."
+                            aria-label="Rechercher dans les publications"
+                        >
+                    </div>
+
+                    <div class="filter-group">
+                        <label for="yearFilter" class="filter-label">Année</label>
+                        <select id="yearFilter" class="filter-select" aria-label="Filtrer par année">
+                            <option value="">Toutes les années</option>
+                            <option value="2026">2026</option>
+                            <option value="2025">2025</option>
+                            <option value="2024">2024</option>
+                            <option value="2023">2023</option>
+                            <option value="2022">2022</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <label for="typeFilter" class="filter-label">Type</label>
+                        <select id="typeFilter" class="filter-select" aria-label="Filtrer par type de publication">
+                            <option value="">Tous les types</option>
+                            <option value="article">Article de revue</option>
+                            <option value="conference">Communication</option>
+                            <option value="rapport">Rapport</option>
+                            <option value="these">Thèse</option>
+                        </select>
+                    </div>
+
+                    <button id="resetFilters" class="btn btn-outline-small">Réinitialiser</button>
+                </div>
+
+                <!-- Results count -->
+                <div class="publications-count">
+                    <p id="resultsCount" aria-live="polite">Chargement...</p>
+                </div>
+
+                <!-- Publications List -->
+                <div id="publicationsList" class="publications-list">
+                    <!-- Les publications seront injectées ici par JavaScript -->
+                </div>
+
+                <!-- No results message -->
+                <div id="noResults" class="no-results" style="display: none;">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"/>
+                        <line x1="12" y1="8" x2="12" y2="12"/>
+                        <line x1="12" y1="16" x2="12.01" y2="16"/>
+                    </svg>
+                    <p>Aucune publication ne correspond à vos critères de recherche.</p>
+                    <button id="resetFromNoResults" class="btn btn-primary">Réinitialiser les filtres</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Ferlo-Sine (PC2)</h4>
+                    <p>Projet de recherche sur la neutralité carbone au Sahel dans le cadre de l'initiative Grande Muraille Verte.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Liens utiles</h4>
+                    <ul class="footer-links">
+                        <li><a href="https://github.com/ferlo-sine" target="_blank" rel="noopener">GitHub</a></li>
+                        <li><a href="mailto:contact@ferlo-sine.example">Contact</a></li>
+                        <li><a href="#">Mentions légales</a></li>
+                        <li><a href="#">Données ouvertes</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Initiative GMV</h4>
+                    <p>Ce projet s'inscrit dans le cadre de la Grande Muraille Verte pour le Sahara et le Sahel.</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Ferlo-Sine. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
