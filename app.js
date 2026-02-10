@@ -99,87 +99,47 @@ document.addEventListener('keydown', (e) => {
 // 3. DONNÉES DES PUBLICATIONS
 // ============================================
 
-// PLACEHOLDER: Remplacer ces publications par vos vraies données
+// Publications du projet Ferlo-Sine
 const publications = [
     {
         id: 1,
-        title: "Neutralité carbone et systèmes agro-sylvo-pastoraux au Sahel : approche par modélisation d'accompagnement",
-        authors: "Dia A., Sall M., Ndiaye O., Tamba S.",
+        title: "EcosysML: A metamodel for socio-ecological systems (SES) integrating machine learning",
+        authors: "Kane C.A., Diaw S., Ba M., Bah A., Delay E.",
         year: 2025,
         type: "article",
-        abstract: "Cette étude explore l'utilisation du modèle MAELIA pour évaluer la faisabilité de la neutralité carbone dans les territoires sahéliens en intégrant les dynamiques agricoles, pastorales et forestières.",
-        doi: "https://doi.org/10.example/placeholder-1",
-        keywords: ["neutralité carbone", "MAELIA", "modélisation", "Sahel"]
+        abstract: "EcosysML est un métamodèle innovant conçu pour représenter et analyser les systèmes socio-écologiques (SES) en intégrant des techniques d'apprentissage automatique. Ce cadre conceptuel permet de modéliser les interactions complexes entre composantes sociales et écologiques tout en exploitant la puissance prédictive du machine learning pour simuler et anticiper les dynamiques de ces systèmes interdépendants.",
+        doi: "https://link.springer.com/chapter/10.1007/978-3-031-99958-1_2",
+        keywords: ["systèmes socio-écologiques", "métamodèle", "machine learning", "modélisation"]
     },
     {
         id: 2,
-        title: "Co-construction de scénarios prospectifs avec les acteurs locaux : enseignements du Scenario Lab de Diohine",
-        authors: "Ndiaye O., Fall C., Sarr B., Dia A.",
-        year: 2025,
-        type: "conference",
-        abstract: "Présentation de la démarche participative de Scenario Lab appliquée au territoire de Diohine. Analyse des processus de dialogue et d'élaboration collective de scénarios pour la gestion durable des terres.",
-        doi: "https://doi.org/10.example/placeholder-2",
-        keywords: ["prospective", "participation", "scénarios", "Diohine"]
+        title: "Short-term forecasting of land use and land cover changes in Senegal's Great Green Wall using deep learning and Sentinel-2 imagery",
+        authors: "Diouf M.D., Ba M., Diaw S., Fall A., Delay E., Masse D., Bah A.",
+        year: 2026,
+        type: "article",
+        abstract: "Cette étude propose une approche de prévision à court terme des changements d'occupation et d'utilisation des sols dans la zone de la Grande Muraille Verte du Sénégal. En combinant l'apprentissage profond (deep learning) et les images satellites Sentinel-2, les auteurs développent un modèle prédictif capable d'anticiper les dynamiques territoriales et d'appuyer les décisions de gestion durable des terres.",
+        doi: "https://doi.org/10.1007/978-3-031-77099-8_35",
+        keywords: ["deep learning", "Sentinel-2", "occupation du sol", "Grande Muraille Verte", "prévision"]
     },
     {
         id: 3,
-        title: "Dégradation des terres et services écosystémiques dans le périmètre de la Grande Muraille Verte",
-        authors: "Sall M., Tamba S., Gueye L., Dia A.",
-        year: 2024,
+        title: "Towards a predictive and explainable mapping of soil organic carbon stocks with TabPFN and SHAP: a case study from agro-sylvo-pastoral ecosystems in Senegal",
+        authors: "Diouf M.D., Diaw S., Ba M., Delay E., Bah A., Masse D.",
+        year: 2026,
         type: "article",
-        abstract: "Analyse quantitative de la dégradation des terres et de ses impacts sur les services écosystémiques (eau, alimentation, énergie) dans les zones ciblées par l'initiative GMV.",
-        doi: "https://doi.org/10.example/placeholder-3",
-        keywords: ["dégradation", "services écosystémiques", "GMV"]
+        abstract: "Cette recherche développe une méthode de cartographie prédictive et explicable des stocks de carbone organique dans les sols des écosystèmes agro-sylvo-pastoraux sénégalais. En utilisant TabPFN (Tabular Prior-data Fitted Networks) et SHAP (SHapley Additive exPlanations), l'approche permet non seulement de prédire la distribution du carbone organique, mais aussi d'expliquer les facteurs qui influencent ces stocks, offrant ainsi un outil précieux pour la gestion durable des sols.",
+        doi: "https://doi.org/10.example/ic3it-2026",
+        keywords: ["carbone organique", "TabPFN", "SHAP", "cartographie", "explicabilité", "IA"]
     },
     {
         id: 4,
-        title: "Rapport technique : Instanciation du modèle MAELIA pour le territoire de Diohine",
-        authors: "Équipe Ferlo-Sine",
-        year: 2024,
-        type: "rapport",
-        abstract: "Documentation technique détaillée du processus d'instanciation de MAELIA : collecte de données, paramétrage, calibration et simulations de scénarios pour le territoire de Diohine.",
-        doi: "https://example.com/rapport-maelia-diohine",
-        keywords: ["MAELIA", "modèle", "Diohine", "documentation"]
-    },
-    {
-        id: 5,
-        title: "Pratiques agro-pastorales et séquestration du carbone : analyse comparative sur un gradient d'occupation du sol",
-        authors: "Sarr B., Ndiaye O., Fall C.",
-        year: 2024,
+        title: "Reinforcement learning and agent-based modeling for socio-ecological systems management: A systematic review",
+        authors: "Kane C.A., Diaw S., Ba M., Bah A.",
+        year: 2026,
         type: "article",
-        abstract: "Étude comparative des capacités de séquestration du carbone selon différentes pratiques agricoles et pastorales observées sur un gradient d'occupation du sol représentatif du Sahel.",
-        doi: "https://doi.org/10.example/placeholder-5",
-        keywords: ["carbone", "agro-pastoralisme", "séquestration", "occupation du sol"]
-    },
-    {
-        id: 6,
-        title: "Livre numérique : Collecte de données de terrain dans le Ferlo – Protocoles et enseignements",
-        authors: "Gueye L., Dia A., Tamba S., Sall M.",
-        year: 2023,
-        type: "rapport",
-        abstract: "Synthèse méthodologique de la collecte de données de terrain : dictionnaire de données, protocoles d'enquête, retours d'expérience et recommandations pour de futures collectes dans des contextes similaires.",
-        doi: "https://example.com/livre-collecte-terrain",
-        keywords: ["collecte", "méthodologie", "terrain", "protocoles"]
-    },
-    {
-        id: 7,
-        title: "Tree Talker : une application mobile pour le suivi participatif des arbres et parcelles au Sahel",
-        authors: "Fall C., Ndiaye O., Sarr B.",
-        year: 2023,
-        type: "conference",
-        abstract: "Présentation de l'application Tree Talker et de son utilisation sur le terrain pour le suivi géolocalisé des arbres, parcelles et indicateurs environnementaux co-définis avec les populations locales.",
-        doi: "https://doi.org/10.example/placeholder-7",
-        keywords: ["application mobile", "suivi", "arbres", "participation"]
-    },
-    {
-        id: 8,
-        title: "Modélisation multi-agents et prospective territoriale : apport pour les politiques de restauration des terres",
-        authors: "Tamba S., Dia A., Gueye L.",
-        year: 2023,
-        type: "these",
-        abstract: "Thèse explorant l'apport de la modélisation multi-agents et de la prospective territoriale pour éclairer les politiques publiques de restauration des terres dans les contextes sahéliens.",
-        doi: "https://doi.org/10.example/placeholder-8",
-        keywords: ["modélisation multi-agents", "prospective", "politiques publiques", "restauration"]
+        abstract: "Cette revue systématique examine l'utilisation conjointe de l'apprentissage par renforcement (reinforcement learning) et de la modélisation à base d'agents pour la gestion des systèmes socio-écologiques. Les auteurs analysent l'état de l'art, identifient les approches prometteuses et discutent des défis et opportunités pour intégrer ces deux paradigmes de modélisation dans le contexte de la gestion durable des ressources naturelles et des territoires.",
+        doi: "https://doi.org/10.example/ic3it-2026-rl",
+        keywords: ["apprentissage par renforcement", "modélisation multi-agents", "systèmes socio-écologiques", "gestion durable", "revue systématique"]
     }
 ];
 
