@@ -106,7 +106,7 @@ const publications = [
         title: "EcosysML: A metamodel for socio-ecological systems (SES) integrating machine learning",
         authors: "Kane C.A., Diaw S., Ba M., Bah A., Delay E.",
         year: 2025,
-        type: "article",
+        type: "conference",
         abstract: "EcosysML est un métamodèle innovant conçu pour représenter et analyser les systèmes socio-écologiques (SES) en intégrant des techniques d'apprentissage automatique. Ce cadre conceptuel permet de modéliser les interactions complexes entre composantes sociales et écologiques tout en exploitant la puissance prédictive du machine learning pour simuler et anticiper les dynamiques de ces systèmes interdépendants.",
         doi: "https://link.springer.com/chapter/10.1007/978-3-031-99958-1_2",
         keywords: ["systèmes socio-écologiques", "métamodèle", "machine learning", "modélisation"]
@@ -116,7 +116,7 @@ const publications = [
         title: "Short-term forecasting of land use and land cover changes in Senegal's Great Green Wall using deep learning and Sentinel-2 imagery",
         authors: "Diouf M.D., Ba M., Diaw S., Fall A., Delay E., Masse D., Bah A.",
         year: 2026,
-        type: "article",
+        type: "conference",
         abstract: "Cette étude propose une approche de prévision à court terme des changements d'occupation et d'utilisation des sols dans la zone de la Grande Muraille Verte du Sénégal. En combinant l'apprentissage profond (deep learning) et les images satellites Sentinel-2, les auteurs développent un modèle prédictif capable d'anticiper les dynamiques territoriales et d'appuyer les décisions de gestion durable des terres.",
         doi: "https://doi.org/10.1007/978-3-031-77099-8_35",
         keywords: ["deep learning", "Sentinel-2", "occupation du sol", "Grande Muraille Verte", "prévision"]
@@ -126,7 +126,7 @@ const publications = [
         title: "Towards a predictive and explainable mapping of soil organic carbon stocks with TabPFN and SHAP: a case study from agro-sylvo-pastoral ecosystems in Senegal",
         authors: "Diouf M.D., Diaw S., Ba M., Delay E., Bah A., Masse D.",
         year: 2026,
-        type: "article",
+        type: "conference",
         abstract: "Cette recherche développe une méthode de cartographie prédictive et explicable des stocks de carbone organique dans les sols des écosystèmes agro-sylvo-pastoraux sénégalais. En utilisant TabPFN (Tabular Prior-data Fitted Networks) et SHAP (SHapley Additive exPlanations), l'approche permet non seulement de prédire la distribution du carbone organique, mais aussi d'expliquer les facteurs qui influencent ces stocks, offrant ainsi un outil précieux pour la gestion durable des sols.",
         doi: "https://doi.org/10.example/ic3it-2026",
         keywords: ["carbone organique", "TabPFN", "SHAP", "cartographie", "explicabilité", "IA"]
@@ -136,7 +136,7 @@ const publications = [
         title: "Reinforcement learning and agent-based modeling for socio-ecological systems management: A systematic review",
         authors: "Kane C.A., Diaw S., Ba M., Bah A.",
         year: 2026,
-        type: "article",
+        type: "conference",
         abstract: "Cette revue systématique examine l'utilisation conjointe de l'apprentissage par renforcement (reinforcement learning) et de la modélisation à base d'agents pour la gestion des systèmes socio-écologiques. Les auteurs analysent l'état de l'art, identifient les approches prometteuses et discutent des défis et opportunités pour intégrer ces deux paradigmes de modélisation dans le contexte de la gestion durable des ressources naturelles et des territoires.",
         doi: "https://doi.org/10.example/ic3it-2026-rl",
         keywords: ["apprentissage par renforcement", "modélisation multi-agents", "systèmes socio-écologiques", "gestion durable", "revue systématique"]
@@ -163,7 +163,7 @@ if (publicationsList) {
     function renderPublication(pub) {
         const typeLabels = {
             'article': 'Article de revue',
-            'conference': 'Communication',
+            'conference': 'Conférence indexée',
             'rapport': 'Rapport',
             'these': 'Thèse'
         };
@@ -264,10 +264,10 @@ const carouselIndicators = document.getElementById('carouselIndicators');
 if (carouselInner && carouselPrev && carouselNext && carouselIndicators) {
     // Images du carrousel (à personnaliser avec vos propres images)
     const carouselImages = [
-        { src: 'images/carousel1.jpg', alt: 'Paysage du Ferlo-Sine' },
-        { src: 'images/carousel2.jpg', alt: 'Activités agro-pastorales' },
-        { src: 'images/carousel3.jpg', alt: 'Recherche sur le terrain' },
-        { src: 'images/carousel4.jpg', alt: 'Communauté locale' }
+        { src: 'images/carousel1.png', alt: '' },
+        { src: 'images/carousel2.png', alt: '' },
+        { src: 'images/carousel3.png', alt: '' },
+        { src: 'images/carousel4.png', alt: '' }
     ];
 
     let currentSlide = 0;
