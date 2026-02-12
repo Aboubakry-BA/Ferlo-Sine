@@ -253,7 +253,105 @@ if (publicationsList) {
 }
 
 // ============================================
-// 5. SMOOTH SCROLL (amélioré pour les ancres)
+// 5. CAROUSEL D'IMAGES
+// ============================================
+
+const carouselInner = document.getElementById('carouselInner');
+const carouselPrev = document.getElementById('carouselPrev');
+const carouselNext = document.getElementById('carouselNext');
+const carouselIndicators = document.getElementById('carouselIndicators');
+
+if (carouselInner && carouselPrev && carouselNext && carouselIndicators) {
+    // Images du carrousel (à personnaliser avec vos propres images)
+    const carouselImages = [
+        { src: 'images/carousel1.jpg', alt: 'Paysage du Ferlo-Sine' },
+        { src: 'images/carousel2.jpg', alt: 'Activités agro-pastorales' },
+        { src: 'images/carousel3.jpg', alt: 'Recherche sur le terrain' },
+        { src: 'images/carousel4.jpg', alt: 'Communauté locale' }
+    ];
+
+    let currentSlide = 0;
+
+    // Créer les slides
+    carouselImages.forEach((img, index) => {
+        const slide = document.createElement('div');
+        slide.className = 'carousel-slide';
+        slide.innerHTML = `<img src="${img.src}" alt="${img.alt}">`;
+        carouselInner.appendChild(slide);
+    });
+
+    // Créer les indicateurs
+    carouselImages.forEach((img, index) => {
+        const indicator = document.createElement('button');
+        indicator.className = 'carousel-indicator';
+        indicator.setAttribute('aria-label', `Aller à l'image ${index + 1}`);
+        if (index === 0) indicator.classList.add('active');
+        indicator.addEventListener('click', () => goToSlide(index));
+        carouselIndicators.appendChild(indicator);
+    });
+
+    // Fonction pour aller à une slide spécifique
+    function goToSlide(n) {
+        currentSlide = n;
+        if (currentSlide < 0) currentSlide = carouselImages.length - 1;
+        if (currentSlide >= carouselImages.length) currentSlide = 0;
+
+        carouselInner.style.transform = `translateX(-${currentSlide * 100}%)`;
+
+        // Mettre à jour les indicateurs
+        const indicators = carouselIndicators.querySelectorAll('.carousel-indicator');
+        indicators.forEach((ind, i) => {
+            ind.classList.toggle('active', i === currentSlide);
+        });
+    }
+
+    // Boutons précédent/suivant
+    carouselPrev.addEventListener('click', () => goToSlide(currentSlide - 1));
+    carouselNext.addEventListener('click', () => goToSlide(currentSlide + 1));
+
+    // Auto-play (optionnel)
+    let autoplayInterval = setInterval(() => goToSlide(currentSlide + 1), 5000);
+
+    // Pause auto-play au survol
+    const carousel = document.querySelector('.carousel');
+    if (carousel) {
+        carousel.addEventListener('mouseenter', () => clearInterval(autoplayInterval));
+        carousel.addEventListener('mouseleave', () => {
+            autoplayInterval = setInterval(() => goToSlide(currentSlide + 1), 5000);
+        });
+    }
+
+    // Support du swipe sur mobile
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    carousel.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+    });
+
+    carousel.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+    });
+
+    function handleSwipe() {
+        if (touchStartX - touchEndX > 50) {
+            goToSlide(currentSlide + 1);
+        }
+        if (touchEndX - touchStartX > 50) {
+            goToSlide(currentSlide - 1);
+        }
+    }
+
+    // Support des touches clavier
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft') goToSlide(currentSlide - 1);
+        if (e.key === 'ArrowRight') goToSlide(currentSlide + 1);
+    });
+}
+
+// ============================================
+// 6. SMOOTH SCROLL (amélioré pour les ancres)
 // ============================================
 
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -278,7 +376,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 // ============================================
-// 6. ANIMATIONS AU SCROLL (Intersection Observer)
+// 7. ANIMATIONS AU SCROLL (Intersection Observer)
 // ============================================
 
 // Ajouter une animation douce à l'apparition des cartes et sections
@@ -311,7 +409,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // ============================================
-// 7. ACCESSIBILITÉ : Gestion du focus
+// 8. ACCESSIBILITÉ : Gestion du focus
 // ============================================
 
 // Améliorer la navigation au clavier
@@ -322,7 +420,7 @@ document.addEventListener('keydown', (e) => {
 });
 
 // ============================================
-// 8. UTILITAIRES
+// 9. UTILITAIRES
 // ============================================
 
 // Fonction utilitaire pour déboguer (à retirer en production)

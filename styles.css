@@ -122,16 +122,39 @@ ul {
 
 .header-content {
     display: flex;
-    justify-content: space-between;
     align-items: center;
     padding: var(--spacing-sm) 0;
+    position: relative;
+}
+
+.header-logos {
+    width: 33.33%;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.logos-img {
+    height: 50px;
+    width: auto;
 }
 
 .logo {
+    width: 33.33%;
     display: flex;
     align-items: baseline;
     gap: var(--spacing-xs);
     text-decoration: none;
+    justify-content: center;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.nav {
+    width: 33.33%;
+    display: flex;
+    justify-content: flex-end;
+    margin-left: auto;
 }
 
 .logo-text {
@@ -149,8 +172,9 @@ ul {
 
 .nav-list {
     display: flex;
-    gap: var(--spacing-md);
+    gap: 0;
     list-style: none;
+    justify-content: flex-end;
 }
 
 .nav-link {
@@ -254,6 +278,100 @@ ul {
     gap: var(--spacing-md);
     justify-content: center;
     flex-wrap: wrap;
+}
+
+/* === CAROUSEL === */
+.carousel-section {
+    padding: var(--spacing-lg) 0;
+    background-color: var(--color-bg-light);
+}
+
+.carousel {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-md);
+}
+
+.carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide {
+    min-width: 100%;
+    position: relative;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    display: block;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+    z-index: 10;
+}
+
+.carousel-btn:hover {
+    background: var(--color-bg);
+    box-shadow: var(--shadow-md);
+}
+
+.carousel-btn svg {
+    width: 24px;
+    height: 24px;
+    color: var(--color-primary);
+}
+
+.carousel-btn-prev {
+    left: 20px;
+}
+
+.carousel-btn-next {
+    right: 20px;
+}
+
+.carousel-indicators {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 10;
+}
+
+.carousel-indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    border: none;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.carousel-indicator.active {
+    background: var(--color-bg);
+    width: 30px;
+    border-radius: 6px;
 }
 
 /* === SECTIONS === */
@@ -386,6 +504,11 @@ ul {
 .badge-deliverable {
     background-color: #f3e5f5;
     color: #7b1fa2;
+}
+
+.badge-ia {
+    background-color: #e8eaf6;
+    color: #3f51b5;
 }
 
 .card-title {
@@ -967,8 +1090,24 @@ ul {
         padding: var(--spacing-xl) 0;
     }
 
+    .header-content {
+        display: flex;
+        justify-content: space-between;
+        position: static;
+    }
+
+    .header-logos {
+        width: auto;
+        order: 1;
+    }
+
+    .logo {
+        display: none;
+    }
+
     .menu-toggle {
         display: block;
+        order: 3;
     }
 
     .nav {
@@ -981,6 +1120,7 @@ ul {
         box-shadow: var(--shadow-lg);
         padding: var(--spacing-xxl) var(--spacing-md) var(--spacing-md);
         transition: right 0.3s ease;
+        order: 4;
     }
 
     .nav.active {
@@ -990,6 +1130,7 @@ ul {
     .nav-list {
         flex-direction: column;
         gap: var(--spacing-xs);
+        justify-content: flex-start;
     }
 
     .nav-link {
@@ -1055,6 +1196,27 @@ ul {
 
     .modal-links .btn {
         width: 100%;
+    }
+
+    .carousel-slide img {
+        height: 300px;
+    }
+
+    .carousel-btn {
+        width: 40px;
+        height: 40px;
+    }
+
+    .carousel-btn-prev {
+        left: 10px;
+    }
+
+    .carousel-btn-next {
+        right: 10px;
+    }
+
+    .logos-img {
+        height: 35px;
     }
 }
 

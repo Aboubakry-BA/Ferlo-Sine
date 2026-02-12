@@ -12,6 +12,9 @@
     <header class="header">
         <div class="container">
             <div class="header-content">
+                <div class="header-logos">
+                    <img src="images/logos.png" alt="Logos des partenaires" class="logos-img">
+                </div>
                 <a href="index.html" class="logo">
                     <span class="logo-text">Ferlo-Sine</span>
                     <span class="logo-subtitle">PC2</span>
@@ -41,9 +44,33 @@
                         Trajectoires pour la neutralité carbone et le développement durable <br>
                         le long d'un gradient agro-sylvo-pastoral au Sénégal
                     </p>
-                    <div class="hero-cta">
+                    <!-- <div class="hero-cta">
                         <a href="#contexte" class="btn btn-primary">Découvrir le projet</a>
                         <a href="publications.html" class="btn btn-secondary">Voir les publications</a>
+                    </div> -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Carousel Section -->
+        <section class="carousel-section">
+            <div class="container">
+                <div class="carousel">
+                    <div class="carousel-inner" id="carouselInner">
+                        <!-- Les images seront ajoutées ici via JavaScript -->
+                    </div>
+                    <button class="carousel-btn carousel-btn-prev" id="carouselPrev" aria-label="Image précédente">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="15 18 9 12 15 6"/>
+                        </svg>
+                    </button>
+                    <button class="carousel-btn carousel-btn-next" id="carouselNext" aria-label="Image suivante">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="9 18 15 12 9 6"/>
+                        </svg>
+                    </button>
+                    <div class="carousel-indicators" id="carouselIndicators">
+                        <!-- Les indicateurs seront ajoutés ici via JavaScript -->
                     </div>
                 </div>
             </div>
@@ -264,6 +291,17 @@
                             permettant la collecte, la visualisation de données et un support à la décision locale.
                         </p>
                         <button class="btn btn-outline" data-modal="modal-tree">En savoir plus</button>
+                    </article>
+
+                    <!-- Card 4 -->
+                    <article class="card">
+                        <span class="card-badge badge-tool">IA</span>
+                        <h3 class="card-title">Parcellaire de Diohine et Cartographie des Espaces Cultivés</h3>
+                        <p class="card-description">
+                            Utilisation de l'intelligence artificielle pour la mise en place d'un parcellaire détaillé
+                            de Diohine et la cartographie précise des espaces cultivés.
+                        </p>
+                        <button class="btn btn-outline" data-modal="modal-ia-parcellaire">En savoir plus</button>
                     </article>
                 </div>
             </div>
@@ -505,6 +543,44 @@
                 <div class="modal-links">
                     <a href="#" class="btn btn-primary">Accéder à l'application (placeholder)</a>
                     <a href="#" class="btn btn-outline">Guide utilisateur (placeholder)</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal IA Parcellaire -->
+    <div class="modal" id="modal-ia-parcellaire" role="dialog" aria-labelledby="modal-ia-parcellaire-title" aria-hidden="true">
+        <div class="modal-overlay" data-close-modal></div>
+        <div class="modal-content">
+            <button class="modal-close" data-close-modal aria-label="Fermer la modale">&times;</button>
+            <h2 id="modal-ia-parcellaire-title">IA pour le Parcellaire de Diohine</h2>
+            <div class="modal-body">
+                <p>
+                    Ce projet utilise des techniques avancées d'<strong>intelligence artificielle</strong> et de
+                    <strong>télédétection</strong> pour créer un parcellaire détaillé de la zone de Diohine
+                    et cartographier avec précision les espaces cultivés.
+                </p>
+                <h3>Objectifs</h3>
+                <ul>
+                    <li><strong>Délimitation automatique des parcelles :</strong> utilisation d'algorithmes de deep learning pour identifier et délimiter automatiquement les parcelles agricoles à partir d'images satellite haute résolution.</li>
+                    <li><strong>Cartographie des cultures :</strong> classification des types de cultures et identification des espaces cultivés versus non cultivés.</li>
+                    <li><strong>Suivi temporel :</strong> analyse multi-temporelle pour suivre l'évolution de l'occupation des sols et des pratiques agricoles.</li>
+                    <li><strong>Support à la planification :</strong> fournir des données précises pour la gestion territoriale et l'aide à la décision.</li>
+                </ul>
+                <h3>Méthodologie</h3>
+                <p>
+                    Le projet combine des images satellite (Sentinel-2, Pléiades), des techniques de machine learning
+                    (réseaux de neurones convolutifs, segmentation sémantique) et des données de terrain pour validation.
+                </p>
+                <h3>Impact</h3>
+                <p>
+                    Cette cartographie permet une meilleure compréhension de l'organisation spatiale des activités agricoles,
+                    facilite la modélisation des flux de carbone et aide à la co-construction de scénarios prospectifs
+                    avec les acteurs locaux.
+                </p>
+                <div class="modal-links">
+                    <a href="#" class="btn btn-primary">Voir les cartes (placeholder)</a>
+                    <a href="#" class="btn btn-outline">Méthodologie détaillée (placeholder)</a>
                 </div>
             </div>
         </div>
