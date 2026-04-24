@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Ferlo-Sine - Projet de recherche sur la neutralité carbone et la restauration des terres au Sahel dans le cadre de la Grande Muraille Verte">
     <title>Ferlo-Sine | Grande Muraille Verte</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -24,6 +26,7 @@
                         <li><a href="index.html" class="nav-link active" aria-current="page">Accueil</a></li>
                         <li><a href="publications.html" class="nav-link">Publications</a></li>
                         <li><a href="#realisations" class="nav-link">Réalisations</a></li>
+                        <li><a href="#activites" class="nav-link">Activités</a></li>
                         <li><a href="contact.html" class="nav-link">Équipe</a></li>
                     </ul>
                 </nav>
@@ -39,18 +42,48 @@
         <section class="hero">
             <div class="container">
                 <div class="hero-content">
-                    <h1 class="hero-title">Ferlo-Sine</h1>
+                    <div class="hero-eyebrow">
+                        <span></span>
+                        Projet de recherche
+                    </div>
+                    <h1 class="hero-title">
+                        <span class="hero-title-accent">Ferlo-Sine</span> PC2
+                    </h1>
                     <p class="hero-subtitle">
-                        Trajectoires pour la neutralité carbone et le développement durable <br>
+                        Trajectoires pour la neutralité carbone et le développement durable
                         le long d'un gradient agro-sylvo-pastoral au Sénégal
                     </p>
-                    <!-- <div class="hero-cta">
+                    <div class="hero-cta">
                         <a href="#contexte" class="btn btn-primary">Découvrir le projet</a>
-                        <a href="publications.html" class="btn btn-secondary">Voir les publications</a>
-                    </div> -->
+                        <a href="publications.html" class="btn btn-outline-light">Voir les publications</a>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="hero-stat">
+                            <span class="hero-stat-number">12</span>
+                            <span class="hero-stat-label">Chercheurs</span>
+                        </div>
+                        <div class="hero-stat">
+                            <span class="hero-stat-number">4</span>
+                            <span class="hero-stat-label">Publications</span>
+                        </div>
+                        <div class="hero-stat">
+                            <span class="hero-stat-number">6</span>
+                            <span class="hero-stat-label">Institutions</span>
+                        </div>
+                        <div class="hero-stat">
+                            <span class="hero-stat-number">2</span>
+                            <span class="hero-stat-label">Sites d'étude</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
+        <!-- Wave -->
+        <div class="wave-divider" style="background:#f8f7f4;">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 60" preserveAspectRatio="none" style="height:60px;">
+                <path fill="#1e3a24" d="M0,40 C360,80 1080,0 1440,40 L1440,0 L0,0 Z"/>
+            </svg>
+        </div>
 
         <!-- Carousel Section -->
         <section class="carousel-section">
@@ -238,6 +271,32 @@
                         </p>
                         <button class="btn btn-outline" data-modal="modal-ia-parcellaire">En savoir plus</button>
                     </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Activités -->
+        <section id="activites" class="section">
+            <div class="container">
+                <h2 class="section-title">Activités du projet</h2>
+                <p class="section-intro">
+                    Retrouvez ici les temps forts du projet : réunions de travail, missions de terrain,
+                    prototypes développés et sessions de formation.
+                </p>
+
+                <!-- Filtres -->
+                <div class="activities-filters" id="activitiesFilters">
+                    <button class="filter-btn active" data-filter="all">Tout voir</button>
+                    <button class="filter-btn" data-filter="reunion">Réunions</button>
+                    <button class="filter-btn" data-filter="terrain">Terrain</button>
+                    <button class="filter-btn" data-filter="prototype">Prototypes</button>
+                    <button class="filter-btn" data-filter="formation">Formations</button>
+                    <button class="filter-btn" data-filter="autre">Autre</button>
+                </div>
+
+                <!-- Grille des activités -->
+                <div class="activities-grid" id="activitiesGrid">
+                    <!-- Les activités sont injectées par JS -->
                 </div>
             </div>
         </section>
@@ -528,6 +587,23 @@
                 </div>
             </div>
         </div>
+    </div>
+
+    <!-- Lightbox pour les activités -->
+    <div class="lightbox" id="lightbox" role="dialog" aria-label="Visionneuse d'images" aria-hidden="true">
+        <div class="lightbox-overlay" id="lightboxOverlay"></div>
+        <div class="lightbox-content" id="lightboxContent">
+            <button class="lightbox-close" id="lightboxClose" aria-label="Fermer">&times;</button>
+            <div class="lightbox-img-wrap" id="lightboxImgWrap"></div>
+            <div class="lightbox-caption" id="lightboxCaption"></div>
+        </div>
+        <button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Image précédente">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
+        <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Image suivante">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+        <div class="lightbox-counter" id="lightboxCounter"></div>
     </div>
 
     <script src="app.js"></script>
